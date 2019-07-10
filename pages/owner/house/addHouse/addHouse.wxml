@@ -1,0 +1,58 @@
+<!--pages/owner/house/addHouse/addHouse.wxml-->
+<scroll-view scroll-y class="DrawerPage {{modalName=='viewModal'?'show':''}}">
+  <cu-custom bgColor="bg-gradual-blue" isBack="{{true}}">
+    <view slot="backText">返回</view>
+    <view slot="content">添加房屋</view>
+  </cu-custom>
+
+  <view class="cu-list menu card-menu margin-top-xl margin-bottom-xl shadow-lg">
+    <view class="cu-item" >
+      <view class="content myitem" >
+        <view class="text-grey">房屋地址</view>
+        <input name='address' placeholder='请输入房屋地址' bindinput='addrChange' class='text-grey text-right'></input>
+      </view>
+    </view>
+    <view class="cu-item " wx:for="{{lockInfo}}" wx:key="index">
+			<view class="content myitem" bindtap="showModal" data-target="viewModal" data-index="{{index}}">
+				<text class="text-black">锁名：{{item.lockName}}</text>
+        <view class="text-black text-right">所需等级：{{levelRange[item.lockLevel]}}</view>
+			</view>
+		</view>
+  </view>
+
+  <view class="padding flex flex-wrap justify-between align-center">
+    <button class="cu-btn lg bg-green" bindtap='showModal' data-target="viewModal">添加锁</button>
+    <button class="cu-btn lg bg-green" bindtap='submit'>提交</button>
+  </view>
+</scroll-view>
+
+<view class="DrawerClose {{modalName=='viewModal'?'show':''}}" bindtap="hideModal">
+	<text class="cuIcon-pullright"></text>
+</view>
+
+<scroll-view scroll-y class="DrawerWindow {{modalName=='viewModal'?'show':''}}">
+	<view class="cu-list menu card-menu margin-top-xl margin-bottom-xl shadow-lg">
+		<view class="cu-item">
+			<view class="content myitem">
+				<text class="text-black">锁的名称</text>
+        <input class='text-black text-right' bindinput='lockNameChange' value='{{lockDetail.lockName}}'></input>
+			</view>
+		</view>
+
+		<view class="cu-item">
+			<view class="content myitem">
+				<view class="text-black">锁的权限等级</view>
+        <picker mode='selector' range='{{levelRange}}' bindchange='levelChange'>
+          <view class="picker">
+            {{lockDetail.lockLevel?levelRange[lockDetail.lockLevel]:'请选择锁的权限等级'}}
+          </view>
+        </picker>
+			</view>
+		</view>
+
+    <view class="padding flex flex-direction" bindtap='save'>
+      <button class="cu-btn bg-green margin-tb-sm lg">保存修改</button>
+    </view>
+
+	</view>
+</scroll-view>

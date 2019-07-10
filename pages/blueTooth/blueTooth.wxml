@@ -1,0 +1,5 @@
+<!--pages/blueTooth/blueTooth.wxml-->
+<cu-custom bgColor="bg-gradual-blue" isBack="{{true}}">
+  <view slot="backText">返回</view>
+  <view slot="content">蓝牙扫描开锁</view>
+</cu-custom>

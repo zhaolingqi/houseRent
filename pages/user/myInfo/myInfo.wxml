@@ -1,0 +1,53 @@
+<!--pages/user/myInfo/myInfo.wxml-->
+		  <cu-custom bgColor="bg-gradual-blue" isBack="{{true}}">
+        <view slot="backText">返回</view>
+        <view slot="content">个人信息</view>
+      </cu-custom>
+			<view class="cu-list menu card-menu margin-top-xl margin-bottom-xl shadow-lg">
+
+				<!-- <view class="cu-item arrow" wx:for="{{house}}" wx:key="index">
+					<view class="content myitem" bindtap="showModal" data-target="viewModal" data-index="{{index}}">
+						<view class="text-grey">{{index +1}} 房屋地址</view>
+            <view class='text-grey text-right'>{{item.houseRegion}}</view>
+					</view>
+				</view> -->
+        <view class='cu-item'>
+          <view class='content myitem'>
+            <view class='text-black'>姓名</view>
+            <input class='text-grey text-right' value='{{myInfo.name}}' bindinput='nameChange'></input>
+          </view>
+        </view>
+
+        <view class='cu-item'>
+          <view class='content myitem'>
+            <view class='text-black'>用户名</view>
+            <view class='text-grey'>{{myInfo.userName}}</view>
+          </view>
+        </view>
+
+        <view class='cu-item'>
+          <view class='content myitem'>
+            <view class='text-black'>电话</view>
+            <input class='text-grey text-right' value='{{myInfo.tel}}' bindinput='telChange'></input>
+          </view>
+        </view>
+
+        <view class='cu-item'>
+          <view class='content myitem'>
+            <view class='text-black'>身份证号</view>
+            <view class='text-grey'>{{myInfo.idNumber}}</view>
+          </view>
+        </view>
+
+        <view class='cu-item'>
+          <view class='content myitem'>
+            <view class='text-black'>身份</view>
+            <view class='text-grey'>{{picker[myInfo.identity]}}</view>
+          </view>
+        </view>
+			</view>
+
+    <view class="padding flex flex-direction" bindtap='save'>  
+       <button class="cu-btn bg-green margin-tb-sm lg">保存修改</button>
+    </view>
+

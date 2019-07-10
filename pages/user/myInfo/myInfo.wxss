@@ -1,0 +1,12 @@
+/* pages/user/myInfo/myInfo.wxss */
+page {
+  width: 100vw;
+  overflow: hidden;
+}
+
+
+
+.myitem{
+  display: flex;
+  justify-content: space-between;
+}

@@ -1,0 +1,102 @@
+<!--pages/owner/autho/autho.wxml-->
+		<scroll-view scroll-y class="DrawerPage {{modalName=='viewModal'?'show':''}}">
+
+		  <cu-custom bgColor="bg-gradual-blue" isBack="{{true}}">
+        <view slot="backText">返回</view>
+        <view slot="content">授权管理</view>
+      </cu-custom>
+      <view class="flex-sub text-center">
+        <view class=" text-xl padding">
+          <text class="text-black text-bold">申请人列表</text>
+        </view>
+      </view>
+
+			<view class="cu-list menu card-menu margin-top-xl margin-bottom-xl shadow-lg">
+				<view class="cu-item arrow" wx:for="{{user}}" wx:key="index">
+					<view class="content myitem" bindtap="showModal" data-target="viewModal" data-index="{{index}}">
+						<view class="text-grey">{{index +1}} 申请人姓名</view>
+            <view class='text-grey text-right'>{{item.name}}</view>
+					</view>
+				</view>
+			</view>
+			
+		</scroll-view>
+
+		<view class="DrawerClose {{modalName=='viewModal'?'show':''}}" bindtap="hideModal">
+			<text class="cuIcon-pullright"></text>
+		</view>
+
+		<scroll-view scroll-y class="DrawerWindow {{modalName=='viewModal'?'show':''}}">
+			<view class="cu-list menu card-menu margin-top-xl margin-bottom-xl shadow-lg">
+
+				<view class="cu-item">
+					<view class="content myitem">
+						<view class="text-black">申请人姓名</view>
+            <view class='text-grey text-right'>{{userDetail.name}}</view>
+					</view>
+				</view>
+
+        <view class="cu-item">
+					<view class="content myitem">
+						<view class="text-black">申请人手机号</view>
+            <view class='text-grey text-right'>{{userDetail.tel}}</view>
+					</view>
+				</view>
+
+        <view class="cu-item">
+					<view class="content myitem">
+						<view class="text-black">申请房屋地址</view>
+            <view class='text-grey text-right'>{{userDetail.addr}}</view>
+					</view>
+				</view>
+
+				<!-- <view class="cu-item">
+					<view class="content myitem">
+						<view class="text-black">申请起始时间</view>
+            <picker mode="date" start="2015-09-01" end="2100-09-01" bindchange="startTimeChange">
+			        <view class="picker">
+				        {{userDetail.startTime}}
+			        </view>
+		        </picker>
+					</view>
+				</view>
+
+				<view class="cu-item">
+					<view class="content myitem">
+						<view class="text-black">申请截止时间</view>
+            <picker mode="date" start="2015-09-01" end="2100-09-01" bindchange="endTimeChange">
+			        <view class="picker">
+				        {{userDetail.endTime}}
+			        </view>
+		        </picker>
+					</view>
+				</view> -->
+
+				<view class="cu-item">
+					<view class="content myitem">
+						<view class="text-black">申请人权限等级</view>
+            <picker mode='selector' range='{{levelRange}}' bindchange='levelChange'>
+              <view class="picker">
+                {{userDetail.level?levelRange[userDetail.level]:'请选择申请人权限等级'}}
+              </view>
+            </picker>
+					</view>
+				</view>
+
+				<!-- <view class="cu-item">
+					<view class="content myitem">
+						<view class="text-black">申请人目前状态</view>
+            <picker mode='selector' range='{{statusRange}}' bindchange='statusChange'>
+              <view class="picker">
+                {{userDetail.status?statusRange[userDetail.status]:'是否授权？'}}
+              </view>
+            </picker>
+					</view>
+				</view> -->
+        <view class="padding flex flex-direction" bindtap='save'>
+          <button class="cu-btn bg-green margin-tb-sm lg">接受申请</button>
+        </view>
+			</view>
+		</scroll-view>
+
+

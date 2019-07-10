@@ -1,0 +1,35 @@
+{
+  "pages":[
+        "pages/login/login",
+    "pages/owner/owner",
+    "pages/home/home",
+    "pages/owner/apply/apply",
+    "pages/owner/scan/scan",
+    "pages/user/user",
+    "pages/user/autho/autho",
+    "pages/user/apply/apply",
+    "pages/user/scan/scan",
+    "pages/user/house/house",
+    "pages/user/myInfo/myInfo",
+    "pages/owner/house/addHouse/addHouse",
+    "pages/owner/autho/autho",
+    "pages/owner/house/house",
+    "pages/owner/myInfo/myInfo",
+    "pages/register/register",
+    "pages/agent/agent",
+    "pages/blueTooth/blueTooth",
+    "pages/index/index",
+    "pages/logs/logs"
+  ],
+  "window":{
+    "navigationStyle": "custom",
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "WeChat",
+    "navigationBarTextStyle":"black",
+    "backgroundColor":"#ccc"
+  },
+  "usingComponents": {
+    "cu-custom": "/colorui/components/cu-custom"
+  }
+}

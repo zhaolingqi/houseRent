@@ -1,0 +1,40 @@
+<!--pages/login/login.wxml-->
+<view class='head'>
+  <image src='../../image/login/房屋.png' class='img'></image>
+  <text class='title'>物联网房屋共享系统</text>
+</view>
+
+  <view class="loginForm">
+    <form bindsubmit='login'>
+
+      <view class="inputView">
+        <label class="loginLabel">
+          <text decode='{{true}}'>账&nbsp;&nbsp;&nbsp;&nbsp;号</text>
+        </label>
+        <input name='username' value='{{name}}' class="inputText" placeholder='  请输入账号' />
+      </view>
+
+      <view class="line"></view>
+
+      <view class="inputView">
+        <label class="loginLabel">
+          <text decode='{{true}}'>密&nbsp;&nbsp;&nbsp;&nbsp;码</text>
+        </label>
+        <input name='password' value='{{password}}' class="inputText" password="true" placeholder='  请输入密码' />
+      </view>
+
+      <view class="line"></view>
+
+      <view class="loginBtnView">  
+        <button class='loginBtn' square size='large' type='primary' formType='submit'>登录</button>
+      </view>
+
+    </form>
+
+    <!--附加操作-->
+    <view class="extraView">
+      <navigator class="navigator1" url="../register/register" open-type="navigate" hover-class="navigator-hover">还没注册？点这里</navigator>
+    </view>
+
+  </view>
+

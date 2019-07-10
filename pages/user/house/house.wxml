@@ -1,0 +1,67 @@
+<!--pages/user/house/house.wxml-->
+		<scroll-view scroll-y class="DrawerPage {{modalName=='viewModal'?'show':''}}">
+
+		  <cu-custom bgColor="bg-gradual-blue" isBack="{{true}}">
+        <view slot="backText">返回</view>
+        <view slot="content">授权管理</view>
+      </cu-custom>
+      <view class="flex-sub text-center">
+        <view class=" text-xl padding">
+          <text class="text-black text-bold">拥有房屋列表</text>
+        </view>
+      </view>
+
+			<view class="cu-list menu card-menu margin-top-xl margin-bottom-xl shadow-lg">
+				<view class="cu-item arrow" wx:for="{{house}}" wx:key="index">
+					<view class="content myitem" bindtap="showModal" data-target="viewModal" data-index="{{index}}">
+						<view class="text-grey">{{index +1}} 房屋地址</view>
+            <view class='text-grey text-right'>{{item.houseRegion}}</view>
+					</view>
+				</view>
+			</view>
+      <!-- <view class="padding flex flex-direction" bindtap='addHouse'>
+        <button class="cu-btn bg-green margin-tb-sm lg">添加房屋</button>
+      </view> -->
+		</scroll-view>
+
+		<view class="DrawerClose {{modalName=='viewModal'?'show':''}}" bindtap="hideModal">
+			<text class="cuIcon-pullright"></text>
+		</view>
+
+		<scroll-view scroll-y class="DrawerWindow {{modalName=='viewModal'?'show':''}}">
+      <view class="cu-list menu card-menu margin-top-xl margin-bottom-xl shadow-lg">
+
+        <view class="cu-item" >
+          <view class="content myitem" >
+            <view class="text-grey">房屋地址</view>
+            <input name='address' placeholder='请输入房屋地址' class='text-grey text-right' value='{{houseDetail.houseRegion}}'></input>
+          </view>
+        </view>
+        <view class="cu-item " wx:for="{{houseDetail.lockInfo}}" wx:key="index">
+          <view class="content myitem">
+            <text class="text-black">锁名：{{item.lockName}}</text>
+            <!-- <view class="text-black text-right">所需等级：{{levelRange[item.lockLevel]}}</view> -->
+            <picker bindchange='levelChange' range='{{levelRange}}' value='{{item.lockLevel}}' data-index='{{index}}'>
+              <view class='picker'>
+                {{levelRange[item.lockLevel]}}
+              </view>
+            </picker>
+          </view>
+        </view>
+        <view class="cu-item" >
+          <view class="content myitem" >
+            <view class="text-grey">房屋出租状态</view>
+            <view name='address' placeholder='请输入房屋地址' class='text-grey text-right'>{{rentStatus[houseDetail.rent]}}</view>
+          </view>
+        </view>
+
+      </view>
+      <view class="padding flex flex-direction">  
+        <!-- <button class="cu-btn bg-green margin-tb-sm lg"  bindtap='save'>保存修改</button> -->
+        <button class="cu-btn bg-green margin-tb-sm lg"  bindtap='changeRent'>修改出租状态</button>
+        <button class="cu-btn bg-red margin-tb-sm lg"  bindtap='delete'>删除</button>
+      </view>
+		</scroll-view>
+
+
+
