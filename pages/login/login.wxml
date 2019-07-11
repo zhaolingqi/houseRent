@@ -1,6 +1,6 @@
 <!--pages/login/login.wxml-->
 <view class='head'>
-  <image src='../../image/login/房屋.png' class='img'></image>
+  <image src='../../image/login/1.png' class='img'></image>
   <text class='title'>物联网房屋共享系统</text>
 </view>
 
@@ -33,7 +33,8 @@
 
     <!--附加操作-->
     <view class="extraView">
-      <navigator class="navigator1" url="../register/register" open-type="navigate" hover-class="navigator-hover">还没注册？点这里</navigator>
+      <navigator class="navigator1" url="../register/register" open-type="navigate" hover-class="navigator-hover">注册</navigator>
+      <navigator class="navigator1" url="../home/home" open-type="navigate" hover-class="navigator-hover">返回首页</navigator>
     </view>
 
   </view>

@@ -8,8 +8,8 @@ Page({
     levelRange: ['Vip', 'Close', 'Normal'],
     rentStatus: ['可被租赁','不可被租赁']
   },
-  // 修改租赁状态
-  changeRent() {
+  // 允许出租
+  rentEnabled() {
     var that = this
     wx.request({
       method:'POST',
@@ -17,6 +17,20 @@ Page({
       success(res) {
         console.log(res)
         if(res.statusCode === 200 ) {
+          that.hideModal()
+        }
+      }
+    })
+  },
+  //禁止出租
+  rentUnenabled() {
+    var that = this
+    wx.request({
+      method: 'POST',
+      url: 'http://www.changwujuexi.cn:8080/forbidrent?houseid=' + that.data.houseDetail.id,
+      success(res) {
+        console.log(res)
+        if (res.statusCode === 200) {
           that.hideModal()
         }
       }

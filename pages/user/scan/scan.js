@@ -7,10 +7,22 @@ Page({
   data: {
     levelRange: ['Vip', 'Close', 'Normal'],   
   },
-  toBL() {
-    wx.navigateTo({
-      url: '../../blueTooth/blueTooth',
-    })
+  toBL(e) {
+    var index = e.currentTarget.dataset.index
+    var lockLevel = this.data.houseDetail.lockInfo[index].lockLevel
+    var userLevel = this.data.houseDetail.level
+    console.log('lockLevel', lockLevel, 'userLevel', userLevel)
+    if (userLevel <= lockLevel) {
+      wx.navigateTo({
+        url: '../../blueTooth/blueTooth',
+      })
+    } else {
+      wx.showToast({
+        title: '用户权限不足',
+        icon:'none',
+        duration: 2000
+      })
+    }
   },
   // 显示抽屉
   showModal(e) {

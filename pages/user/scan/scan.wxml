@@ -3,7 +3,7 @@
 
 		  <cu-custom bgColor="bg-gradual-blue" isBack="{{true}}">
         <view slot="backText">返回</view>
-        <view slot="content">授权管理</view>
+        <view slot="content">设备扫描</view>
       </cu-custom>
       <view class="flex-sub text-center">
         <view class=" text-xl padding">
@@ -35,7 +35,7 @@
           </view>
         </view>
         <view class="cu-item " wx:for="{{houseDetail.lockInfo}}" wx:key="index">
-          <view class="content myitem" bindtap='toBL'>
+          <view class="content myitem" bindtap='toBL' data-index="{{index}}">
             <text class="text-black">锁名：{{item.lockName}}</text>
             <!-- <view class="text-black text-right">所需等级：{{levelRange[item.lockLevel]}}</view> -->
               <view class='picker'>

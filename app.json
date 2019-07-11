@@ -1,8 +1,9 @@
 {
   "pages":[
-        "pages/login/login",
-    "pages/owner/owner",
     "pages/home/home",
+    "pages/block/block",
+    "pages/login/login",
+    "pages/owner/owner",
     "pages/owner/apply/apply",
     "pages/owner/scan/scan",
     "pages/user/user",

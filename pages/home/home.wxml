@@ -2,8 +2,24 @@
 <!-- <cu-custom bgColor="bg-gradual-blue" isBack="{{true}}">
   <view slot="content">物联网应用</view>
 </cu-custom> -->
+<cu-custom bgColor="bg-gradual-blue" isBack="{{false}}">
+  <view slot="content">万物物联</view>
+</cu-custom>
 <swiper class="screen-swiper {{DotStyle?'square-dot':'round-dot'}} bgimg" indicator-dots="true" circular="true" autoplay="true" interval="5000" duration="500">
   <swiper-item wx:for="{{swiperList}}" wx:key>
     <image src="{{item.url}}" mode="aspectFill"></image>
   </swiper-item>
 </swiper>
+<view class="solid-bottom text-lg padding">
+  <text class="text-black">物联应用</text>
+</view>
+<scroll-view scroll-y class="scrollPage">
+  <view class='nav-list'>
+    <navigator open-type="navigate" hover-class='none' url="/pages/{{item.nav}}/{{item.nav}}" class="nav-li bg-{{item.color}}" wx:for="{{elements}}" wx:key>
+      <view class="nav-title">{{item.title}}</view>
+      <view class="nav-name">{{item.name}}</view>
+      <text class='cuIcon-{{item.icon}}'></text>
+    </navigator>
+  </view>
+  <view class='cu-tabbar-height'></view>
+</scroll-view>

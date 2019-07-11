@@ -1,53 +1,31 @@
-// pages/home/home.js
+// pages/block/block.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    swiperList: [{
-      url: '../../image/home/1.jpg'
-    }, {
-      url: '../../image/home/2.jpg',
-    }, {
-      url: '../../image/home/3.jpg'
-    }],
-    elements: [{
-      title: '房屋共享',
-      name: 'house',
-      nav: 'login',
-      color: 'cyan',
-      icon: 'home'
-    },
-    {
-      title: '汽车共享',
-      name: 'Car',
-      nav: 'block',
-      color: 'blue',
-      icon: 'deliver'
-    },
-    {
-      title: '...',
-      name: '...',
-      nav: 'block',
-      color: 'purple',
-      icon: 'font'
-    },
-    {
-      title: '... ',
-      name: '...',
-      nav: 'block',
-      color: 'mauve',
-      icon: 'icon'
-    },
-    ],
+
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    wx.showModal({
+      title: '正在开发中',
+      content: '抱歉，该模块功能正在开发中',
+      success() {
+        wx.navigateBack({
+          delta: 1
+        })
+      },
+      fail() {
+        wx.navigateBack({
+          delta:1
+        })
+      }
+    })
   },
 
   /**
