@@ -18,14 +18,14 @@ Page({
       success(res) {
         if(res.data === 401) {
           wx.showToast({
-            title: '您目前的权限为normal，无法转租',
+            title: '若经转租降低一级权限后，将没有可开的锁，无法接受申请',
             icon: 'none'
           })
           that.hideModal()
         } else if (res.data === 200){
           that.hideModal()
         }
-        console.log(res)
+        console.log('sublet',res)
       }
     })
   },

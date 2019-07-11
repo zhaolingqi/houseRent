@@ -13,7 +13,7 @@
 <view class="solid-bottom text-lg padding">
   <text class="text-black">物联应用</text>
 </view>
-<scroll-view scroll-y class="scrollPage">
+<scroll-view scroll-y class=" ">
   <view class='nav-list'>
     <navigator open-type="navigate" hover-class='none' url="/pages/{{item.nav}}/{{item.nav}}" class="nav-li bg-{{item.color}}" wx:for="{{elements}}" wx:key>
       <view class="nav-title">{{item.title}}</view>

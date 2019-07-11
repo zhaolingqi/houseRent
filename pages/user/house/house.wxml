@@ -3,7 +3,7 @@
 
 		  <cu-custom bgColor="bg-gradual-blue" isBack="{{true}}">
         <view slot="backText">返回</view>
-        <view slot="content">授权管理</view>
+        <view slot="content">房屋管理</view>
       </cu-custom>
       <view class="flex-sub text-center">
         <view class=" text-xl padding">
@@ -60,7 +60,7 @@
         <!-- <button class="cu-btn bg-green margin-tb-sm lg"  bindtap='save'>保存修改</button> -->
         <button class="cu-btn bg-green margin-tb-sm lg"  bindtap='rentEnabled'>允许出租</button>
         <button class="cu-btn bg-green margin-tb-sm lg"  bindtap='rentUnenabled'>禁止出租</button>
-        <button class="cu-btn bg-red margin-tb-sm lg"  bindtap='delete'>删除</button>
+        <button class="cu-btn bg-red margin-tb-sm lg"  bindtap='endRent'>结束共享</button>
       </view>
 		</scroll-view>
 

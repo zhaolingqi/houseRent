@@ -1,6 +1,6 @@
   <view class='UCenter-bg'>
   <image src='../../image/house.png' class='round xl  margin-left' mode='aspectFit' ></image>
-  <view class="text-xl" style='color:#000'>房屋租赁系统
+  <view class="text-xl" style='color:#000'>房屋共享系统
       <text class="text-df">v1.0</text>
   </view>
   <!-- <image src='https://image.weilanwl.com/gif/wave.gif' mode='scaleToFill' class='gif-wave '></image> -->

@@ -8,6 +8,26 @@ Page({
     levelRange: ['Vip', 'Close', 'Normal'],
     rentStatus: ['可被租赁','不可被租赁']
   },
+  // 结束租赁
+  endRent() {
+    var that = this
+    var houseid = this.data.houseDetail.id
+    wx.request({
+      method:'POST',
+      url: 'http://www.changwujuexi.cn:8080/endrent?houseid=' + houseid,
+      success(res) {
+        if(res.data === 200) {
+          wx.showToast({
+            title: '已结束共享',
+            icon: 'none'
+          })
+          wx.navigateBack({
+            delta:1
+          })
+        }
+      }
+    })
+  },
   // 允许出租
   rentEnabled() {
     var that = this
@@ -15,9 +35,14 @@ Page({
       method:'POST',
       url: 'http://www.changwujuexi.cn:8080/allowrent?houseid=' + that.data.houseDetail.id,
       success(res) {
-        console.log(res)
-        if(res.statusCode === 200 ) {
+        console.log('rentEnabled',res)
+        if(res.data === 200 ) {
           that.hideModal()
+        } else if (res.data ===401) {
+          wx.showToast({
+            title: '您的权限为Normal，无法继续转租',
+            icon: 'none'
+          })
         }
       }
     })

@@ -44,7 +44,7 @@ App({
   },
   globalData: {
     userInfo: null,
-    CustomBar: wx.getSystemInfoSync()['statusBarHeight'],
+    // CustomBar: wx.getSystemInfoSync()['statusBarHeight'],
     ColorList: [{
       title: '嫣红',
       name: 'red',

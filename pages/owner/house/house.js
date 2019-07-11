@@ -30,7 +30,7 @@ Page({
 
   },
   addHouse() {
-    wx.navigateTo({
+       wx.navigateTo({
       url: 'addHouse/addHouse',
     })
   },
@@ -66,6 +66,12 @@ Page({
     this.setData({
       modalName: e.currentTarget.dataset.target,
       houseDetail: this.data.house[e.currentTarget.dataset.index]
+    })
+  },
+  showModal2(e) {
+    this.setData({
+      modalName: e.currentTarget.dataset.target,
+      houseDetail: this.data.rentedHouse[e.currentTarget.dataset.index]
     })
   },
   // 隐藏抽屉
@@ -143,6 +149,54 @@ Page({
         }
       }
     })
+
+    wx.request({
+      url: 'http://www.changwujuexi.cn:8080/users/tenantinfo?id=' + ownerId,
+      success(res) {
+        // var obj = JSON.stringify(res.data)
+        // var obj1 = JSON.parse(res.data)
+        console.log('users/info', res.data['1'] !== undefined)
+        that.setData({
+          rentedHouseTemp: res.data
+        })
+        // console.log('rentedHouse', that.data.rentedHouse)
+        // console.log('house', that.data.house)
+        that.rentedHouseProcess()
+      }
+    })
+  },
+
+  /**
+   * 
+   */
+  rentedHouseProcess() {
+    let that = this
+    let rentedHouseTemp = that.data.rentedHouseTemp
+    let house = that.data.house
+    let rentedHouse = []
+    let j = 0
+    for (let i = 0; i < house.length; i++) {
+      if (rentedHouseTemp[house[i].id] !== undefined) {
+        rentedHouse[j] = rentedHouseTemp[house[i].id]
+        rentedHouse[j].houseId = house[i].id
+        j++
+        console.log('222', rentedHouse)
+      }
+    }
+    console.log('11111', rentedHouse)
+    rentedHouse.forEach(function (item) {
+      if (item !== null) {
+        for (let i = 0; i < house.length; i++) {
+          if (item.houseId == house[i].id) {
+            item.houseRegion = house[i].houseRegion
+          }
+        }
+      }
+    })
+    that.setData({
+      rentedHouse: rentedHouse
+    })
+    console.log('rentedHous111111111e', rentedHouse)
   },
 
   /**
