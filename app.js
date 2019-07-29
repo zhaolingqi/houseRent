@@ -43,6 +43,7 @@ App({
     })
   },
   globalData: {
+    globalUrl: 'http://smart.changwujuexi.cn/',
     userInfo: null,
     // CustomBar: wx.getSystemInfoSync()['statusBarHeight'],
     ColorList: [{

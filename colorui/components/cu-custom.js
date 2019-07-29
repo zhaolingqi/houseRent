@@ -31,9 +31,21 @@ Component({
   /**
    * 组件的初始数据
    */
+  // wx.getSystemInfo({
+  //   success: e => {
+  //     console.log('System', e.statusBarHeight)
+  //     this.globalData.StatusBar = e.statusBarHeight;
+  //     let custom = wx.getMenuButtonBoundingClientRect();
+  //     console.log('custom', custom)
+  //     this.globalData.Custom = custom;
+  //     this.globalData.CustomBar = custom.bottom + custom.top - e.statusBarHeight;
+  //   }
+  // }),
   data: {
+    // CustomBar: wx.getSystemInfoSync()['statusBarHeight'],
+    CustomBar: wx.getMenuButtonBoundingClientRect().bottom,
     StatusBar: app.globalData.StatusBar,
-    CustomBar: app.globalData.CustomBar,
+    // CustomBar: app.globalData.CustomBar,
     Custom: app.globalData.Custom
   },
   /**

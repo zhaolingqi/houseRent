@@ -3,7 +3,7 @@
 
 		  <cu-custom bgColor="bg-gradual-blue" isBack="{{true}}">
         <view slot="backText">返回</view>
-        <view slot="content">授权管理</view>
+        <view slot="content">申请权限</view>
       </cu-custom>
       <view class="flex-sub text-center">
         <view class=" text-xl padding">
@@ -27,7 +27,7 @@
       </view>
 
       <view class="cu-list menu card-menu margin-top-xl margin-bottom-xl shadow-lg">
-				<view class="cu-item arrow" wx:for="{{appliedHouse}}" wx:key="index">
+				<view class="cu-item" wx:for="{{appliedHouse}}" wx:key="index">
 					<view class="content myitem" data-target="viewModal" data-index="{{index}}">
 						<view class="text-grey">{{index +1}} 房屋地址</view>
             <view class='text-grey text-right'>{{item.addr}}</view>

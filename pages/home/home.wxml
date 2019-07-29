@@ -1,10 +1,7 @@
 <!--pages/home/home.wxml-->
-<!-- <cu-custom bgColor="bg-gradual-blue" isBack="{{true}}">
-  <view slot="content">物联网应用</view>
+<!-- <cu-custom bgColor="bg-gradual-blue" isBack="{{false}}">
+  <view slot="content">可控委托授权的物联网设备共享系统</view>
 </cu-custom> -->
-<cu-custom bgColor="bg-gradual-blue" isBack="{{false}}">
-  <view slot="content">万物物联</view>
-</cu-custom>
 <swiper class="screen-swiper {{DotStyle?'square-dot':'round-dot'}} bgimg" indicator-dots="true" circular="true" autoplay="true" interval="5000" duration="500">
   <swiper-item wx:for="{{swiperList}}" wx:key>
     <image src="{{item.url}}" mode="aspectFill"></image>

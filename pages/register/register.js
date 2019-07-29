@@ -22,6 +22,8 @@ Page({
       success() {
         wx.request({
           url: 'http://www.changwujuexi.cn:8080/users/registration?identity=' + e.detail.value.identity,
+          // url: getApp().globalData.globalUrl
+          // url: 'http://smart.changwujuexi.cn:8080/users/registration?identity=' + e.detail.value.identity,
           method: 'POST',
           data: {
             'userName': e.detail.value.username,

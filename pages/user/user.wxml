@@ -10,7 +10,7 @@
   <view class="cu-item arrow" bindtap='toApply'>
     <view class="content">
       <text class="cuIcon-friendfavor text-grey"></text>
-      <text class="text-grey">代理申请</text>
+      <text class="text-grey">申请权限</text>
     </view>
   </view>
   <view class="cu-item arrow" bindtap='toAutho'>
@@ -22,7 +22,7 @@
   <view class="cu-item arrow" bindtap='toHouse'>
     <view class="content">
       <text class="cuIcon-locationfill text-grey"></text>
-      <text class="text-grey">房屋转租</text>
+      <text class="text-grey">房屋代理</text>
     </view>
   </view>
   <view class="cu-item arrow" bindtap='toScan'>

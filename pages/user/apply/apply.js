@@ -22,6 +22,11 @@ Page({
             title: '已成功申请',
           })
           that.hideModal()
+        } else if (res.data === 401) {
+          wx.showToast({
+            title: '请勿重复申请',
+            icon: 'none'
+          })
         }
       }
     })

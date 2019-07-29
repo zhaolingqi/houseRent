@@ -2,3 +2,8 @@
 .bgimg {
   height: 520rpx;
 }
+.title {
+  /* font-size: 20rpx; */
+  font-family: "Times New Roman",Georgia,Serif;
+  width: 100rpx;
+}

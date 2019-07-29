@@ -3,3 +3,37 @@
   <view slot="backText">返回</view>
   <view slot="content">蓝牙扫描开锁</view>
 </cu-custom>
+
+<view class="flex-sub text-center">
+  <view class=" text-xl padding">
+    <text class="text-black text-bold">扫描到的蓝牙列表</text>
+  </view>
+</view>
+
+<view class="cu-list menu card-menu margin-top-xl margin-bottom-xl shadow-lg">
+  <view class="cu-item arrow" wx:for="{{blueToothDevices}}" wx:key="index">
+    <view class="content myitem" bindtap="showModal" data-target="viewModal" data-index="{{index}}">
+      <view class="text-grey">蓝牙地址</view>
+      <view class='text-grey text-right'>{{item.deviceId}}</view>
+    </view>
+  </view>
+</view>
+
+<view class="flex-sub text-center">
+  <view class=" text-xl padding">
+    <text class="text-black text-bold">已匹配蓝牙</text>
+  </view>
+</view>
+
+<view class="cu-list menu card-menu margin-top-xl margin-bottom-xl shadow-lg">
+  <view class="cu-item arrow" wx:for="{{devices}}" wx:key="index">
+    <view class="content myitem" bindtap="showModal" data-target="viewModal" data-index="{{index}}">
+      <view class="text-grey">{{index + 1}} 蓝牙地址</view>
+      <view class='text-grey text-right'>{{item.deviceId}}</view>
+    </view>
+  </view>
+</view>
+
+<view class="padding flex flex-direction" bindtap='sendData'>  
+  <button class="cu-btn bg-green margin-tb-sm lg">开锁</button>
+</view>

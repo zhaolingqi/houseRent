@@ -10,11 +10,10 @@ Page({
   },
 
   login(e) {
-    console.log(e)
-    console.log(e.detail.value.username + ' ' + e.detail.value.password)
-
+    console.log('aad', wx.getMenuButtonBoundingClientRect(), wx.getMenuButtonBoundingClientRect().top)
     wx.request({
       url: 'http://www.changwujuexi.cn:8080/users/log?username=' + e.detail.value.username + '&password=' + e.detail.value.password,
+      // url: 'http://smart.changwujuexi.cn:8080/users/log?username=' + e.detail.value.username + '&password=' + e.detail.value.password,
       // url: 'http://[2001:da8:1002:5033:582c:f9a2:1d90:87cc]:8080/users/log?username=' + e.detail.value.username + '&password=' + e.detail.value.password,
       method: 'POST',
       data: {
