@@ -47,7 +47,28 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    wx.checkIsSupportSoterAuthentication({
+      success(res) {
+        console.log('checkIsSupportSoterAuthentication', res)
+      },
+      fail(res) {
+        console.log(res)
+      }
+    })
+    wx.checkIsSoterEnrolledInDevice({
+      checkAuthMode: 'fingerPrint',
+      success(res) {
+        console.log('checkIsSoterEnrolledInDevice', res)
+      }
+    })
+    wx.startSoterAuthentication({
+      requestAuthModes: ['fingerPrint'],
+      challenge: '123456',
+      authContent: '请用指纹解锁',
+      success(res) {
+        console.log('startSoterAuthentication', res)
+      }
+    })
   },
 
   /**

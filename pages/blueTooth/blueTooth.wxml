@@ -34,6 +34,6 @@
   </view>
 </view>
 
-<view class="padding flex flex-direction" bindtap='sendData'>  
+<view class="padding flex flex-direction" bindtap='fingerPrint'>  
   <button class="cu-btn bg-green margin-tb-sm lg">开锁</button>
 </view>

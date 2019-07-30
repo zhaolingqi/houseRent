@@ -365,6 +365,50 @@ Page({
       }
     })
   },
+// 指纹识别
+  fingerPrint() {
+    var that = this
+    wx.checkIsSupportSoterAuthentication({
+      success(res) {
+        console.log('checkIsSupportSoterAuthentication', res)
+      },
+      fail(res) {
+        wx.showModal({
+          title: '手机不支持指纹识别',
+          success() {
+            wx.navigateBack({
+              
+            })
+          }
+        })
+      }
+    })
+    wx.checkIsSoterEnrolledInDevice({
+      checkAuthMode: 'fingerPrint',
+      success(res) {
+        console.log('checkIsSoterEnrolledInDevice', res)
+      },
+      fail(res) {
+        wx.showModal({
+          title: '手机未存储指纹',
+          success() {
+            wx.navigateBack({
+            })
+          }
+        })
+      }
+    })
+    wx.startSoterAuthentication({
+      requestAuthModes: ['fingerPrint'],
+      challenge: '123456',
+      authContent: '请用指纹解锁',
+      success(res) {
+        console.log('startSoterAuthentication', res)
+        that.sendData('str')
+      }
+    })
+  },
+
   /**
    * 生命周期函数--监听页面加载
    */
